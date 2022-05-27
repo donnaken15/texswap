@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="2.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <ProjectGuid>{F991EE30-46C2-4372-ACB4-74A57D744B71}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>texswap</RootNamespace>
+    <AssemblyName>texswap</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <NoWin32Manifest>False</NoWin32Manifest>
+    <SignAssembly>False</SignAssembly>
+    <DelaySign>False</DelaySign>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
+    <NoStdLib>False</NoStdLib>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <IntermediateOutputPath>obj\$(Configuration)\</IntermediateOutputPath>
+    <WarningLevel>4</WarningLevel>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <BaseAddress>4194304</BaseAddress>
+    <RegisterForComInterop>False</RegisterForComInterop>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>Full</DebugType>
+    <Optimize>False</Optimize>
+    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>False</DebugSymbols>
+    <DebugType>None</DebugType>
+    <Optimize>True</Optimize>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+    <BaseIntermediateOutputPath>obj\</BaseIntermediateOutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BinaryEndianReader.cs" />
+    <Compile Include="BinaryEndianWriter.cs" />
+    <Compile Include="DDS.cs" />
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Queenbee\Pak\PakDbgQbKey.cs" />
+    <Compile Include="Queenbee\Pak\PakEditor.cs" />
+    <Compile Include="Queenbee\Pak\PakFormat.cs" />
+    <Compile Include="Queenbee\Pak\PakFormatType.cs" />
+    <Compile Include="Queenbee\Pak\PakHeaderFlags.cs" />
+    <Compile Include="Queenbee\Pak\PakHeaderItem.cs" />
+    <Compile Include="Queenbee\Pak\PakItemType.cs" />
+    <Compile Include="Queenbee\Qb\base\EditableAttribute.cs" />
+    <Compile Include="Queenbee\Qb\base\GenericQbItem.cs" />
+    <Compile Include="Queenbee\Qb\base\QbItemBase.cs" />
+    <Compile Include="Queenbee\Qb\base\QbItemType.cs" />
+    <Compile Include="Queenbee\Qb\Lzss.cs" />
+    <Compile Include="Queenbee\Qb\QbFile.cs" />
+    <Compile Include="Queenbee\Qb\QbItemArray.cs" />
+    <Compile Include="Queenbee\Qb\QbItemFloat.cs" />
+    <Compile Include="Queenbee\Qb\QbItemFloats.cs" />
+    <Compile Include="Queenbee\Qb\QbItemFloatsArray.cs" />
+    <Compile Include="Queenbee\Qb\QbItemInteger.cs" />
+    <Compile Include="Queenbee\Qb\QbItemQbKey.cs" />
+    <Compile Include="Queenbee\Qb\QbItemScript.cs" />
+    <Compile Include="Queenbee\Qb\QbItemString.cs" />
+    <Compile Include="Queenbee\Qb\QbItemStruct.cs" />
+    <Compile Include="Queenbee\Qb\QbItemStructArray.cs" />
+    <Compile Include="Queenbee\Qb\QbItemUnknown.cs" />
+    <Compile Include="Queenbee\Qb\QbKey.cs" />
+    <Compile Include="Queenbee\Qb\ScriptString.cs" />
+    <Compile Include="Queenbee\Zlib\Adler32.cs" />
+    <Compile Include="Queenbee\Zlib\Deflate.cs" />
+    <Compile Include="Queenbee\Zlib\InfBlocks.cs" />
+    <Compile Include="Queenbee\Zlib\InfCodes.cs" />
+    <Compile Include="Queenbee\Zlib\Inflate.cs" />
+    <Compile Include="Queenbee\Zlib\InfTree.cs" />
+    <Compile Include="Queenbee\Zlib\JZlib.cs" />
+    <Compile Include="Queenbee\Zlib\StaticTree.cs" />
+    <Compile Include="Queenbee\Zlib\SupportClass.cs" />
+    <Compile Include="Queenbee\Zlib\Tree.cs" />
+    <Compile Include="Queenbee\Zlib\ZlibStream.cs" />
+    <Compile Include="Queenbee\Zlib\ZStream.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\openHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Queenbee\Zlib\license.txt" />
+    <None Include="Queenbee\Zlib\zlib.net.csproj" />
+    <None Include="Queenbee\Zlib\zlib.net.sln" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="names.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
